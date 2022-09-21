@@ -5,7 +5,7 @@ import PropTypes from "prop-types";
 import "swiper/css";
 import { useState } from "react";
 
-const Test = () => {
+const ProductSwiper = () => {
   const images = [
     "./product1.png",
     "./product2.png",
@@ -60,7 +60,7 @@ const Test = () => {
   );
 };
 
-Test.propTypes = {
+ProductSwiper.propTypes = {
   images: PropTypes.array.isRequired,
 };
-export default Test;
+export default ProductSwiper;

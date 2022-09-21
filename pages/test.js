@@ -5,8 +5,16 @@ import ComposedImages from '../components/ComposedImages'
 import Footer from '../components/Footer'
 import NavBar from '../components/NavBar'
 import ProductCard from '../components/ProductCard'
+import ProductSwiper from '../components/ProductSwiper'
+
+
 import Test from '../components/Test'
-import { logo } from '../constants/logo'
+import TestTwo from '../components/TestTwo'
+import product1 from '../public/product1.png'
+
+
+
+
 
 const test = () => {
   return (
@@ -14,10 +22,16 @@ const test = () => {
     {/* <NavBar/>  */}
      {/* <Footer/>  */}
     {/* <ProductCard/> */}
-    <Test/>
+    {/* <Test/> */}
     {/* <BeautifulCard/> */}
     {/* <ComposedImages/> */}
     {/* <BrownButton/> */}
+    {/* <TestTwo/> */}
+
+ 
+    <ProductSwiper/>
+
+    
     
     </>
   )

@@ -1,5 +1,6 @@
 
 import React from 'react'
+import Link from 'next/link'
 
 const NavBar = () => {
   return (
@@ -15,9 +16,9 @@ const NavBar = () => {
 
         {/* Button Div */}
         <div className='flex  items-center justify-between w-1/4 pl-10 pr-10 text-[#324D67]  tracking-wider'>
-            <a className='cursor-pointer text-[1rem] capitalize border-b-2 border-transparent  hover:border-[#B3907C] hover:border-solid '>Home</a>
-            <a className='cursor-pointer text-[1rem] capitalize border-b-2 border-transparent  hover:border-[#B3907C] hover:border-solid'>About</a>
-            <a className='cursor-pointer text-[1rem] capitalize border-b-2 border-transparent  hover:border-[#B3907C] hover:border-solid'>Products</a>
+            <Link href='/'><a className='cursor-pointer text-[1rem] capitalize border-b-2 border-transparent  hover:border-[#B3907C] hover:border-solid '>Home</a></Link>
+            <Link href='/about'><a className='cursor-pointer text-[1rem] capitalize border-b-2 border-transparent  hover:border-[#B3907C] hover:border-solid'>About</a></Link>
+            <Link href='/products'><a className='cursor-pointer text-[1rem] capitalize border-b-2 border-transparent  hover:border-[#B3907C] hover:border-solid'>Products</a></Link>
         </div>
 
 
