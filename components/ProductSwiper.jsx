@@ -5,19 +5,19 @@ import PropTypes from "prop-types";
 import "swiper/css";
 import { useState } from "react";
 
-const ProductSwiper = () => {
-  const images = [
-    "./product1.png",
-    "./product2.png",
-    "./product3.png",
-    "./product1.png",
-    "./product2.png",
-  ];
+const ProductSwiper = ({images}) => {
+  // const images = [
+  //   "./product1.png",
+  //   "./product2.png",
+  //   "./product3.png",
+  //   "./product1.png",
+  //   "./product2.png",
+  // ];
   const [activeThumb, setActiveThumb] = useState(null);
 
   return (
     <>
-    <div className=" ">
+    <div className="">
       <div className=" w-[553px]">
       <Swiper
         loop={true}
@@ -30,7 +30,7 @@ const ProductSwiper = () => {
       >
         {images.map((item, index) => (
           <SwiperSlide key={index}>
-            <img src={item} className="h-[400px]  rounded" alt="product images" />
+            <img src={item} className="h-[500px] object-cover rounded" alt="product images" />
           </SwiperSlide>
         ))}
       </Swiper>
@@ -60,7 +60,5 @@ const ProductSwiper = () => {
   );
 };
 
-ProductSwiper.propTypes = {
-  images: PropTypes.array.isRequired,
-};
+
 export default ProductSwiper;

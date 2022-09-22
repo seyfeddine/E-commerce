@@ -12,8 +12,13 @@ const about = () => {
         {/* NavBar Section End ---------------------------------------------- */}
 
         {/* Path Section */}
-        <PathDiv/>
-        {/* Path Section End */}
+        <PathDiv
+        pathList={[
+          { name: "Home", link: "/" },
+          { name: "About", link: "/about", active:true },
+        ]}
+      />
+          {/* Path Section End */}
 
         {/* Our Story Section */}
         <div className='flex justify-center gap-14 mt-20  mb-20'>

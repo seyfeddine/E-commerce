@@ -1,66 +1,26 @@
-import React from "react";
-import { Swiper, SwiperSlide } from "swiper/react";
-import { Navigation, Thumbs } from "swiper";
-import PropTypes from "prop-types";
-import "swiper/css";
-import { useState } from "react";
+import React, { useEffect, useState } from 'react'
+import { fetchProducts } from '../helpers/api'
+import Image from 'next/image'
 
 const Test = () => {
-  const images = [
-    "./product1.png",
-    "./product2.png",
-    "./product3.png",
-    "./product1.png",
-    "./product2.png",
-  ];
-  const [activeThumb, setActiveThumb] = useState(null);
+
+
+  const [products, setproducts] = useState([])
+
+  useEffect(() => {
+    fetchProducts().then(
+      data=>setproducts(data)
+    )
+  }, [])
+
+
+
 
   return (
-    <>
-    <div className=" ">
-      <div className=" w-[553px]">
-      <Swiper
-        loop={true}
-        spaceBetween={10}
-        navigation={true}
-        modules={[Navigation, Thumbs]}
-        grabCursor={true}
-        thumbs={{ swiper: activeThumb  && !activeThumb.destroyed ? activeThumb : null }}
-        className=""
-      >
-        {images.map((item, index) => (
-          <SwiperSlide key={index}>
-            <img src={item} className="h-[400px]  rounded" alt="product images" />
-          </SwiperSlide>
-        ))}
-      </Swiper>
+    <div>
+      {products && products?.map((product) => <Image src={product?.image} key={product?.id} width={500} height={500} />)}
+    </div>
+  )
+}
 
-      </div>
-      
-      <div className=" w-[553px]">
-      <Swiper
-        loop={true}
-        spaceBetween={10}
-        slidesPerView={5}
-        modules={[Navigation, Thumbs]}
-        className=""
-        onSwiper={setActiveThumb}
-      >
-        {images.map((item, index) => (
-          <SwiperSlide key={index} >
-            <div className="mt-2">
-              <img src={item} alt="product images"  className="h-[80px] object-cover hover:cursor-pointer rounded"/>
-            </div>
-          </SwiperSlide>
-        ))}
-      </Swiper>
-      </div>
-      </div>
-    </>
-  );
-};
-
-Test.propTypes = {
-  images: PropTypes.array.isRequired,
-};
-export default Test;
+export default Test

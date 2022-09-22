@@ -22,14 +22,14 @@ const test = () => {
     {/* <NavBar/>  */}
      {/* <Footer/>  */}
     {/* <ProductCard/> */}
-    {/* <Test/> */}
+    <Test/>
     {/* <BeautifulCard/> */}
     {/* <ComposedImages/> */}
     {/* <BrownButton/> */}
     {/* <TestTwo/> */}
 
  
-    <ProductSwiper/>
+    {/* <ProductSwiper/> */}
 
     
     
